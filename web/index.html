@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JQuery Plugin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <!--include plugin after jquery has loaded-->
+    <script src="js/jquery.anchor-new-window-on-link-click.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="inner-class-0">
+        <h1>"Facebook <a href="http://www.facebook.com" name="Facebook">Facebook</a></h1>
+        <p class="link-class">This uses jquery to open a link in a new window</p>
+    </div>
+
+    <div class="inner-class-1">
+        <h1>"Google" <a href="http://www.google.com" name="Google">Google</a>
+        </h1>
+        <p class="link-class">This uses jquery to open a link in a new window</p>
+    </div>
+
+    <div class="inner-class-2">
+        <h1>"Bing" <a href="http://www.bing.com" name="Bing">Bing</a>
+        </h1>
+        <p class="link-class">This uses jquery to open a link in a new window</p>
+    </div>
+</div>
+
+<!--call/initialise plugin with options-->
+<script>
+    $(document).ready(function () {
+        'use strict';
+
+        // instantiates the plugin
+        $('a').linkToNewWindow({
+            // user options to plugin
+            windowSize: "width=800,height=800,scrollbars=no"
+        });
+    })
+</script>
+</body>
+</html>
