@@ -12,6 +12,11 @@ etc.), sensible defaults should be supplied by the plugin.
 
 * demonstrating use of the `jquery.anchor-new-window-on-link-click.js`
 
+# Usage #
+To use the sample page that  utilises the plugin:
+
+1. `cd /path/to/root/of/project`
+2. `open web/index.html` # open in browser
 
 # Assumptions and Caveats ##
 
@@ -19,14 +24,12 @@ etc.), sensible defaults should be supplied by the plugin.
 * `windowSize` is the only default value provided by user
 
 ## Testing ##
-_**Firefox 45.0.1** is expected by **Selenium Java WebDriver 2.53.1**_
-_On OSX Selenium Java WebDriver 2.X expects Firefox installed in the default location of **/Application/**_
-_maven build tool is need to pull down the selenium dependencies_
-_Tested with Java 8_
+- _**Firefox 45.0.1** is expected by **Selenium Java WebDriver 2.53.1**_
+- _On OSX Selenium Java WebDriver 2.X expects Firefox installed in the default location of **/Application/**_
+- _maven build tool is need to pull down the selenium dependencies_
+- _Tested with Java 8_
+- Testing the Anchor Jquery plugin
 
-### What is this repository for? ###
-
-* Testing the Anchor Jquery plugin
 
 ### Dependencies ###
 - Selenium Java WebDriver 2.53.1
