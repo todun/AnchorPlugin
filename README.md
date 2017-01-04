@@ -37,3 +37,14 @@ To use the sample page that  utilises the plugin:
 ### How to run tests ###
 - `cd /path/to/root/of/project`
 - `mvn clean test`
+
+### References ###
+- Stackoverflow
+- Lynda.com
+- Jetbrains WebStorm 
+- Jetbrains Karma
+- Javascript Karma
+- JavaScript MDN
+- w3schools Javascript
+- Selenium Firefox
+- Selenium WebDriver
