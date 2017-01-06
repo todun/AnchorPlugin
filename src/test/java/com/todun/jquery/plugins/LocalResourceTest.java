@@ -1,6 +1,5 @@
 package com.todun.jquery.plugins;
 
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,7 +8,7 @@ import java.io.File;
 /**
  * Test for resource located on file system
  */
-public class LocalResourceTest extends AbstractPluginTest {
+public class LocalResourceTest extends AbstractBaseTest {
 
     /**
      * Setup for resource located on file system
@@ -20,7 +19,8 @@ public class LocalResourceTest extends AbstractPluginTest {
     public void setUp() throws Exception {
         port = "";
         resourceProtocol = "file:///";
-        resourcePath = platformAgnosticFilePath(".", "web", "index.html");
+        contextPath = ".";
+        resourcePath = platformAgnosticFilePath(contextPath, RESOURCE_BASE_DIRECTORY, RESOURCE_FILE_NAME);
 
         baseUrl = buildBaseUri(resourceProtocol, resourcePath, port, true);
 
@@ -35,9 +35,9 @@ public class LocalResourceTest extends AbstractPluginTest {
     /**
      * Helper method to determine the file path on any platform
      *
-     * @param pwd present working directory
+     * @param pwd               present working directory
      * @param resourceDirectory directory where resource is located
-     * @param resourceName name of resource
+     * @param resourceName      name of resource
      * @return filepath to resource
      */
     private String platformAgnosticFilePath(String pwd, String resourceDirectory, String resourceName) {

@@ -11,13 +11,19 @@ import java.util.concurrent.TimeUnit;
 /**
  * Plugin tests base class
  */
-public abstract class AbstractPluginTest extends TestCase {
-    protected static WebDriver driver;
+public abstract class AbstractBaseTest extends TestCase {
+    protected static final int TIME_OUT_DURATION = 30;
+    protected static final TimeUnit TIME_OUT_DURATION_UNIT = TimeUnit.SECONDS;
+    protected static final String RESOURCE_FILE_NAME = "index.html";
+    protected static final String RESOURCE_BASE_DIRECTORY = "web";
 
     private final static String DOMAIN_PORT_SEPARATOR = ":";
+    private boolean acceptNextAlert;
+    private StringBuffer verificationErrors;
 
-    private boolean acceptNextAlert = true;
-    private StringBuffer verificationErrors = new StringBuffer();
+    protected static String contextPath;
+
+    protected static WebDriver driver;
 
     protected static String baseUrl;
     protected static String resourceProtocol;
@@ -26,17 +32,19 @@ public abstract class AbstractPluginTest extends TestCase {
 
     @Before
     public void setUp() throws Exception {
+        verificationErrors = new StringBuffer();
+        acceptNextAlert = true;
         driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(TIME_OUT_DURATION, TIME_OUT_DURATION_UNIT);
     }
 
     /**
      * Builds a URI for the resource
      *
      * @param protocol {@link #resourceProtocol}
-     * @param domain {@link #resourcePath}
-     * @param port {@link #port}
-     * @param isFile is resource on file system
+     * @param domain   {@link #resourcePath}
+     * @param port     {@link #port}
+     * @param isFile   is resource on file system
      * @return URI to resource
      */
     protected static String buildBaseUri(String protocol, String domain, String port, boolean isFile) {

@@ -48,3 +48,4 @@ To use the sample page that  utilises the plugin:
 - w3schools Javascript
 - Selenium Firefox
 - Selenium WebDriver
+- Eclipse Jetty Wiki

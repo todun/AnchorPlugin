@@ -10,7 +10,7 @@ import org.junit.Test;
 /**
  * Test for resource located on server
  */
-public class HostedResourceTest extends AbstractPluginTest {
+public class HostedResourceTest extends AbstractBaseTest {
 
     private static Server server;
 
@@ -24,6 +24,7 @@ public class HostedResourceTest extends AbstractPluginTest {
         resourceProtocol = "http://";
         resourcePath = "127.0.0.1";
         port = "7070";
+        contextPath = "/";
 
         baseUrl = buildBaseUri(resourceProtocol, resourcePath, port, false);
 
@@ -35,8 +36,9 @@ public class HostedResourceTest extends AbstractPluginTest {
 
         // Creating the plugin web application context
         WebAppContext webAppContext = new WebAppContext();
-        webAppContext.setResourceBase("web");
-        webAppContext.setContextPath("/");
+        webAppContext.setResourceBase(RESOURCE_BASE_DIRECTORY);
+        webAppContext.setContextPath(contextPath);
+        webAppContext.setWelcomeFiles(new String[]{RESOURCE_FILE_NAME});
         handlers.addHandler(webAppContext);
 
         // Adding the handlers to the server
