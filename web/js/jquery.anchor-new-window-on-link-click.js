@@ -9,7 +9,9 @@
         }, options);
 
         var result = this.click(function () {
-            window.open(this.href, this.name, settings.windowSize);
+            var dataWindowGroup = $(this).attr('data-window-group');
+            // open links with the same data-window-group in the same window
+            window.open(this.href, dataWindowGroup, settings.windowSize);
             return false;
         });
 

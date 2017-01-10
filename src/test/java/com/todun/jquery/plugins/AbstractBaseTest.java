@@ -64,11 +64,11 @@ public abstract class AbstractBaseTest extends TestCase {
         driver.get(baseUrl);
 
         driver.findElement(By.linkText("Facebook")).click();
-        // ERROR: Caught exception [ERROR: Unsupported command [waitForPopUp | Facebook | 30000]]
+        // ERROR: Caught exception [ERROR: Unsupported command [waitForPopUp | social | 30000]]
         driver.findElement(By.linkText("Google")).click();
-        // ERROR: Caught exception [ERROR: Unsupported command [waitForPopUp | Google | 30000]]
+        // ERROR: Caught exception [ERROR: Unsupported command [waitForPopUp | search | 30000]]
         driver.findElement(By.linkText("Bing")).click();
-        // ERROR: Caught exception [ERROR: Unsupported command [waitForPopUp | Bing | 30000]]
+        // ERROR: Caught exception [ERROR: Unsupported command [waitForPopUp | search | 30000]]
     }
 
     /**
